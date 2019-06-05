@@ -1,11 +1,16 @@
 # replace_geometry
 Replaces geometry of chain of ways in OSM file
 
+### Usage ###
+
+<code>python replace_geometry.py [input_filename.osm]</code>
+
 ### Notes ###
 
 * Preparations before running program:
-  * The new geometry must be exactly one line market with the tag _REPLACE=to_, and with the desired direction
+  * The new geometry must be exactly one way market with the tag _REPLACE=to_, and with the desired direction
   * The ways to get new geometry must be a consecutive chain of ways market with the tag _REPLACE=from_
+  * Start node: The first node of the new way must be identical (already merged) to the first node of the chain of existing ways
   * All ways and relations which are connected in OSM should also be included (use _recurse up "<"_ in Overpass)
 
 * The program will keep the original position of the following nodes:
